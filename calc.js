@@ -32,6 +32,32 @@ function getUserDetails() {
     email + " " + sessionStorage.email;
   document.getElementById("nameText").innerText =
     name + "" + sessionStorage.name;
+
+
+ let url = window.location.href;
+  if (url.search!=""){
+    let url = new URL(window.location.href);
+    let parameters = url.search;
+    //let firstLocation = url.search.indexOf("first")
+    let oppLocation = parameters.indexOf("opp")
+    let secondLocation = parameters.indexOf("second")
+
+    let first = parseInt(parameters.slice("?first=".length,oppLocation-1));
+    let opp = parameters.slice(oppLocation+"opp=".length, secondLocation-1)
+    let second = parseInt(parameters.slice(secondLocation+"second=".length));
+
+      if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
+      if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
+      if (opp == "*") tempresult = expo(first, second);
+      if (opp == "/") tempresult = divsn(first, second);
+      if (opp == "x") tempresult = mult(first, second);
+      if (opp == "%") tempresult = percnt(first, second);
+
+      temp.innerText = first + " " + opp + " " + second + " = " + tempresult;
+  }
+
+
+
 }
 for (const n_button of num_buttons) {
   let el = n_button;

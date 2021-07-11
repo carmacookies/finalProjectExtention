@@ -51,7 +51,7 @@ function addParams() {
     let urlParams = "?first="+first;
     urlParams = urlParams +"?opp=" +opp;
     urlParams = urlParams + "?second=" +second;
-    urlParams = urlParams + "?linked=true";
+    //urlParams = urlParams + "?linked=true";
     return urlParams;
   }
   else
@@ -73,7 +73,8 @@ function isOpp(str) {
 function sendViaWa() {
   let urlParams = addParams();
   let url = "calc.html";
-  window.open("https://wa.me/?text=" + url + urlParams);
+  let finalUrl = "https://wa.me/?text=" + url + urlParams;
+  window.open(finalUrl);
 }
 
 function sendMail() {
