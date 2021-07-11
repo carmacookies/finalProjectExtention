@@ -65,7 +65,7 @@ function isNum(str) {
 }
 
 function isOpp(str) {
-  const operators = ["+", "-", "*", "/", "%"];
+  const operators = ["+", "-", "*", "/", "%","x"];
   if (operators.includes(str)) return true;
   else return false;
 }
