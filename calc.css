@@ -1,0 +1,62 @@
+main
+{
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://previews.123rf.com/images/kannaa123rf/kannaa123rf1605/kannaa123rf160500234/56637707-abstract-math-number-background-vector-illustration-for-business-design-black-white-colors-random-si.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: 100% 100%; 
+}
+div
+{
+    background-color:rgb(201, 200, 200);
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.box
+{
+    padding-top: 0px;
+    display:flex;
+    width: 50%;
+    height: 10%; 
+    margin: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+button
+{
+    flex:80; 
+}
+div#calc
+{
+    display: inline-block;
+    width: 70%;
+    height: 110%;
+}
+#calcDisplay{
+    height: 20vh;
+}
+div#user 
+{
+    display: block;
+
+}
+ #finish
+{
+
+    text-align: center;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 20%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+} 

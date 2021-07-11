@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+    <link rel="stylesheet" type="text/css" href="endscreen.css">
+    <script src="endscreen.js" type="text/javascript"></script>
+</head>
+<body onload="getUserDetails()">
+    <div class="scr">
+        
+    </div>
+    <div class="calc">
+        <h2><p id="emailText"></p></h2>
+        <h2><p id="nameText"></p></h2>
+
+        <!-- <h1 class="EMAIL">Your Email</h1>
+        <br>
+        <h1 class="Fullname">Your Full Name</h1> -->
+        <br>
+        <label for="newCalc">:הכנס חישוב לשליחה</label><br>
+        <input type="text" id="newCalc" name="newCalc"><br>
+        <input type="submit" value="Print Now!" class="button">
+        <br>
+        <br>
+        <!-- <a href="https://wa.me/?text=file:///C:/xampp/htdocs/Calculator%20Project/index.html"> -->
+        <div id="wa" onclick="sendViaWa()" ></div>
+            <!-- <img alt="WhatsApp Share Link" src="whaticon.png" width="75" height="75"> -->
+            
+        <a href="mailto:">
+            <img alt="Email Share Link" src="email.png"
+            width="200" height="200"></a>
+
+    </div>
+
+</body>
+</html>

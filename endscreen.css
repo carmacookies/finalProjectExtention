@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    background-image: url('https://previews.123rf.com/images/kannaa123rf/kannaa123rf1605/kannaa123rf160500234/56637707-abstract-math-number-background-vector-illustration-for-business-design-black-white-colors-random-si.jpg');
+
+    background-attachment:scroll;
+    background-position:center; 
+    background-size: 100% 100%;
+    height: 1000px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.calc {
+    border-style:solid;
+    padding: 200px;
+    border-radius: 5%;
+    font-size: 35px;
+    text-align: center;
+    background-color: #f2f5f7;
+    box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC;
+}
+
+.button {
+    font-size: 35px;
+}
+
+.scr {
+    margin-top: 600px;
+    border-radius: 5%;
+    border-style:solid;
+    padding: 100px;
+    font-size: 35px;
+    background-color: #f2f5f7;
+    box-shadow: inset 0 0 0 4px #000, inset -4px -4px 0 6px #CCC;
+}
+
+.scr:hover {
+
+    background-color: #d6d6d6;
+    transition-delay: 0.8ms;
+}
+
+.calc:hover {
+
+    background-color: #d6d6d6;
+    transition-delay: 0.8ms;
+}
+
+
+#wa {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-image: url("whaticon.png");
+    width: 200px;
+    height: 200px;
+}
