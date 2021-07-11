@@ -3,8 +3,8 @@ let opp = "";
 let opp_t = "";
 let first_opp = false;
 let second = "";
-let third = "";
-let second_opp = false;
+// let third = "";
+// let second_opp = false;
 let temp = document.getElementById("calcDisplay");
 let tempresult = "";
 let result = document.getElementById("result");
@@ -35,7 +35,7 @@ function getUserDetails() {
 
 
  let url = window.location.href;
-  if (url.search!=""){
+  if (url.search.length>1){
     let url = new URL(window.location.href);
     let parameters = url.search;
     //let firstLocation = url.search.indexOf("first")
@@ -46,12 +46,12 @@ function getUserDetails() {
     let opp = parameters.slice(oppLocation+"opp=".length, secondLocation-1)
     let second = parseInt(parameters.slice(secondLocation+"second=".length));
 
-      if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
-      if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
-      if (opp == "*") tempresult = expo(first, second);
-      if (opp == "/") tempresult = divsn(first, second);
-      if (opp == "x") tempresult = mult(first, second);
-      if (opp == "%") tempresult = percnt(first, second);
+    if (opp == "+") tempresult = parseInt(first) + parseInt(second);
+    if (opp == "-") tempresult = parseInt(first) - parseInt(second);
+    if (opp == "x") tempresult = mult(first, second);
+    if (opp == "*") tempresult = expo(first, second);
+    if (opp == "/") tempresult = divsn(first, second);
+    if (opp == "%") tempresult = percnt(first, second);
 
       temp.innerText = first + " " + opp + " " + second + " = " + tempresult;
   }
@@ -78,28 +78,28 @@ for (const n_button of num_buttons) {
 
       temp.innerText = first + " " + opp + " " + second + " = " + tempresult;
     }
-    if (second_opp == true) {
-      third = third + el.innerHTML;
-      if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
-      if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
-      if (opp == "*") tempresult = expo(first, second);
-      if (opp == "/") tempresult = divsn(first, second);
-      if (opp == "x") tempresult = mult(first, second);
-      if (opp == "%") tempresult = percnt(first, second);
+    // if (second_opp == true) {
+    //   third = third + el.innerHTML;
+    //   if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
+    //   if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
+    //   if (opp == "*") tempresult = expo(first, second);
+    //   if (opp == "/") tempresult = divsn(first, second);
+    //   if (opp == "x") tempresult = mult(first, second);
+    //   if (opp == "%") tempresult = percnt(first, second);
 
-      temp.innerText =
-        first +
-        " " +
-        opp +
-        " " +
-        second +
-        " " +
-        opp_t +
-        " " +
-        third +
-        " = " +
-        tempresult;
-    }
+    //   temp.innerText =
+    //     first +
+    //     " " +
+    //     opp +
+    //     " " +
+    //     second +
+    //     " " +
+    //     opp_t +
+    //     " " +
+    //     third +
+    //     " = " +
+    //     tempresult;
+    // }
     console.log(tempresult);
     temp.innerText =
       first +
