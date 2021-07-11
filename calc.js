@@ -3,14 +3,17 @@ let opp = "";
 let opp_t = "";
 let first_opp = false;
 let second = "";
-// let third = "";
-// let second_opp = false;
+let third = "";
+let second_opp = false;
 let temp = document.getElementById("calcDisplay");
 let tempresult = "";
 let result = document.getElementById("result");
 let posneg = document.getElementById("posneg");
 let saved_answers = [];
 let clearb = document.getElementById("clearb");
+const paramsU = window.location.search;
+let searchParams = new URLSearchParams(paramsU);
+let link;
 
 let b_One = document.querySelectorAll("one");
 let b_Two = document.querySelectorAll("two");
@@ -32,32 +35,6 @@ function getUserDetails() {
     email + " " + sessionStorage.email;
   document.getElementById("nameText").innerText =
     name + "" + sessionStorage.name;
-
-
- let url = window.location.href;
-  if (url.search.length>1){
-    let url = new URL(window.location.href);
-    let parameters = url.search;
-    //let firstLocation = url.search.indexOf("first")
-    let oppLocation = parameters.indexOf("opp")
-    let secondLocation = parameters.indexOf("second")
-
-    let first = parseInt(parameters.slice("?first=".length,oppLocation-1));
-    let opp = parameters.slice(oppLocation+"opp=".length, secondLocation-1)
-    let second = parseInt(parameters.slice(secondLocation+"second=".length));
-
-    if (opp == "+") tempresult = parseInt(first) + parseInt(second);
-    if (opp == "-") tempresult = parseInt(first) - parseInt(second);
-    if (opp == "x") tempresult = mult(first, second);
-    if (opp == "*") tempresult = expo(first, second);
-    if (opp == "/") tempresult = divsn(first, second);
-    if (opp == "%") tempresult = percnt(first, second);
-
-      temp.innerText = first + " " + opp + " " + second + " = " + tempresult;
-  }
-
-
-
 }
 for (const n_button of num_buttons) {
   let el = n_button;
@@ -78,28 +55,28 @@ for (const n_button of num_buttons) {
 
       temp.innerText = first + " " + opp + " " + second + " = " + tempresult;
     }
-    // if (second_opp == true) {
-    //   third = third + el.innerHTML;
-    //   if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
-    //   if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
-    //   if (opp == "*") tempresult = expo(first, second);
-    //   if (opp == "/") tempresult = divsn(first, second);
-    //   if (opp == "x") tempresult = mult(first, second);
-    //   if (opp == "%") tempresult = percnt(first, second);
+    if (second_opp == true) {
+      third = third + el.innerHTML;
+      if (opp_t == "+") tempresult = parseInt(tempresult) + parseInt(third);
+      if (opp_t == "-") tempresult = parseInt(tempresult) - parseInt(third);
+      if (opp == "*") tempresult = expo(first, second);
+      if (opp == "/") tempresult = divsn(first, second);
+      if (opp == "x") tempresult = mult(first, second);
+      if (opp == "%") tempresult = percnt(first, second);
 
-    //   temp.innerText =
-    //     first +
-    //     " " +
-    //     opp +
-    //     " " +
-    //     second +
-    //     " " +
-    //     opp_t +
-    //     " " +
-    //     third +
-    //     " = " +
-    //     tempresult;
-    // }
+      temp.innerText =
+        first +
+        " " +
+        opp +
+        " " +
+        second +
+        " " +
+        opp_t +
+        " " +
+        third +
+        " = " +
+        tempresult;
+    }
     console.log(tempresult);
     temp.innerText =
       first +
@@ -146,6 +123,7 @@ for (const op_button of op_buttons) {
 posneg.addEventListener("click", (event) => {
   if (first_opp == false) first = parseInt(first) * -1;
   else second = parseInt(second) * -1;
+  temp.innerText = first + " " + opp + " " + second + " = ";
 });
 
 result.addEventListener("click", (event) => {
@@ -161,7 +139,7 @@ result.addEventListener("click", (event) => {
     resu: tempresult,
   });
   sessionStorage.setItem("answers", JSON.stringify(saved_answers));
-  first = tempresult;
+  first = "";
   first_opp = false;
   second_opp = false;
   second = "";
@@ -223,3 +201,22 @@ function percnt(p1, p2) {
   let lnum = mult(full_num, p2);
   return lnum;
 }
+
+if(paramsU.indexOf('linked')!=-1)
+  link=true;
+if (link==true)
+  {
+    first=searchParams.get('first');
+    temp.innerText =
+        first +
+        " " +
+        opp +
+        " " +
+        second +
+        " " +
+        opp_t +
+        " " +
+        third +
+        " = " +
+        tempresult;
+  }
