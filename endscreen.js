@@ -80,5 +80,6 @@ function sendViaWa() {
 function sendMail() {
   let urlParams = addParams();
   let url = "calc.html";
-  window.open("mailto:" + sessionStorage.email + url + urlParams);
+  let finalUrl="mailto:" + sessionStorage.email +"?subject=calculator&body=" +url + urlParams;
+  window.open(finalUrl);
 }
