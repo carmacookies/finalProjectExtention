@@ -35,20 +35,27 @@ function addParams() {
     let second = "";
     for (let i = 0; i < calc.length; i++) {
       if (isNum(calc[i])) {
-        tempN = tempN + calc[i];
+      {  tempN = tempN + calc[i];
+        console.log(first, opp, second, tempN);
+      }
       } else if (isOpp(calc[i])) {
         if (first == "" && tempN != "") {
           first = tempN;
           tempN = "";
           opp = calc[i];
+          console.log(first, opp, second, tempN);
         }
       }
       second = tempN;
     }
-    let urlParams = "?first=" + first + "&opp=" + opp + "&second=" + second;
+    let urlParams = "?first="+first;
+    urlParams = urlParams +"?opp=" +opp;
+    urlParams = urlParams + "?second=" +second;
+    urlParams = urlParams + "?linked=true";
     return urlParams;
   }
-  return "";
+  else
+    return '';
 }
 
 function isNum(str) {
@@ -67,4 +74,10 @@ function sendViaWa() {
   let urlParams = addParams();
   let url = "calc.html";
   window.open("https://wa.me/?text=" + url + urlParams);
+}
+
+function sendMail() {
+  let urlParams = addParams();
+  let url = "calc.html";
+  window.open("mailto:" + sessionStorage.email + url + urlParams);
 }
